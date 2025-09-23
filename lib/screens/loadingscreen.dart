@@ -23,6 +23,7 @@ class _LoadingscreenState extends State<Loadingscreen> {
     await userLocation.getUserLocation(context);
     Weather weather = Weather();
     try {
+      // هون رح اجيب الطقس حسب الاحداثيات بشكل تلقائي عند فتح التطبيق
     await weather.getWeather(  "https://api.openweathermap.org/data/2.5/weather?lat=${userLocation.latitude}&lon=${userLocation.longitude}");
      if (mounted) {
       Navigator.pushReplacement(
@@ -46,6 +47,7 @@ class _LoadingscreenState extends State<Loadingscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: CircularProgressIndicator(
           color: Colors.blue,

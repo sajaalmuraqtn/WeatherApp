@@ -95,7 +95,7 @@ class _WeatherCardState extends State<WeatherCard> {
                       final city = value['city'];
                       final state = value['state'];
                       final country = value['country'];
-
+                       ////////// جلب الطقس للمدينة المختارة //////////
                       final url =
                           "https://api.openweathermap.org/data/2.5/weather?q=$city,$country";
                       await widget.weather_data.getWeather(url);

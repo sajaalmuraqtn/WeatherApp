@@ -28,6 +28,7 @@ class Weather {
     humidity = weather_info['main']['humidity'].toString();
     clouds = weather_info['clouds']['all'].toString();
     condition = weather_info['weather'][0]['id'];
+    // أجيب رابط الأيقونة
     String iconCode = weather_info['weather'][0]['icon'];
     iconUrl = "https://openweathermap.org/img/wn/$iconCode@2x.png";
   }

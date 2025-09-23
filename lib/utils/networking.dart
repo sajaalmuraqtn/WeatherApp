@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'constants.dart';
 
 class NetworkHelper {
-  final String url;
+  final String url; // رح اجيب الرابط اما عن طريق الاحداثيات او عن طريق المدينة
   NetworkHelper(this.url);
   Future<Map<String, dynamic>> getData() async {
     http.Response response = await http.get(Uri.parse(url));
