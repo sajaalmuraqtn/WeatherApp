@@ -21,6 +21,7 @@ class _LoadingscreenState extends State<Loadingscreen> {
   Future<void> getLocationWeather() async {
     UserLocation userLocation = UserLocation();
     await userLocation.getUserLocation(context);
+    // لحتى يقدر يطلب صلاحية الموقع من المستخدمcontext اعطيتو ال  
     Weather weather = Weather();
     try {
       // هون رح اجيب الطقس حسب الاحداثيات بشكل تلقائي عند فتح التطبيق
