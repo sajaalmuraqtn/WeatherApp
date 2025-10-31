@@ -3,13 +3,13 @@
 **WeatherApp** is a modern Flutter application that displays **real-time weather information** for any selected city.  
 It integrates the **OpenWeatherMap API** to fetch live temperature, humidity, wind speed, and hourly forecasts — all within a clean, modern Material Design interface.
 
----
+--
 
 ## ☁️ API Used
 - **OpenWeatherMap API** → Provides live and forecasted weather data such as temperature, humidity, clouds, and wind.  
   - **Endpoints used:**
     - `https://api.openweathermap.org/data/2.5/weather` → For current weather.  
----
+--
 
 ## 🚀 Features
 ✅ Live weather updates using **OpenWeatherMap API**  
@@ -18,14 +18,14 @@ It integrates the **OpenWeatherMap API** to fetch live temperature, humidity, wi
 ✅ City and country picker integration  
 ✅ Responsive layout for all screen sizes  
 
----
+--
 
 ## 🧩 Packages Used
 - **http** → For fetching data from OpenWeatherMap.  
 - **intl** → For date formatting (e.g., `friday, 31 October`).  
 - **country_state_city_picker** → For selecting countries and cities.  
 
----
+--
 
 ## ⚙️ How It Works
 1. The app fetches weather data using **OpenWeatherMap API**.  
