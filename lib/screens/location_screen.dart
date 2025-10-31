@@ -24,25 +24,29 @@ class _LocationScreenState extends State<LocationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Column(
-        children: [
-          WeatherCard(weather_data: widget.weather_data),
-       
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Today', style: TextStyle(color: Colors.white)),
-                Text(
-                  '7 days >',
-                  style: TextStyle(color: Colors.white60, fontSize: 12),
-                ),
-              ],
+      body: SafeArea(
+        bottom: true,
+        top: true,
+        child: Column(
+          children: [
+            WeatherCard(weather_data: widget.weather_data),
+         
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Today', style: TextStyle(color: Colors.white)),
+                  Text(
+                    '7 days >',
+                    style: TextStyle(color: Colors.white60, fontSize: 12),
+                  ),
+                ],
+              ),
             ),
-          ),
-          HourlyWeather( ),
-        ],
+            HourlyWeather( ),
+          ],
+        ),
       ),
     );
   }

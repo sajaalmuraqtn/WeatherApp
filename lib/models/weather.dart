@@ -15,21 +15,21 @@ class Weather {
   late String iconUrl; // رابط أيقونة الطقس
 
   Future<void> getWeather( String url) async {
-    Map<String, dynamic> weather_info = await NetworkHelper(
-      "$url&appid=${API_KEY}&units=metric",
+    Map<String, dynamic> weatherInfo = await NetworkHelper(
+      "$url&appid=$API_KEY&units=metric",
     ).getData();
 
-    city = weather_info['name'];
-    country = weather_info['sys']['country'];
-    temp = (weather_info['main']['temp'] as double).toStringAsFixed(
+    city = weatherInfo['name'];
+    country = weatherInfo['sys']['country'];
+    temp = (weatherInfo['main']['temp'] as double).toStringAsFixed(
       1,
     ); // تحويل إلى درجة مئوية مع رقم عشري واحد
-    wind = weather_info['wind']['speed'].toString();
-    humidity = weather_info['main']['humidity'].toString();
-    clouds = weather_info['clouds']['all'].toString();
-    condition = weather_info['weather'][0]['id'];
+    wind = weatherInfo['wind']['speed'].toString();
+    humidity = weatherInfo['main']['humidity'].toString();
+    clouds = weatherInfo['clouds']['all'].toString();
+    condition = weatherInfo['weather'][0]['id'];
     // أجيب رابط الأيقونة
-    String iconCode = weather_info['weather'][0]['icon'];
+    String iconCode = weatherInfo['weather'][0]['icon'];
     iconUrl = "https://openweathermap.org/img/wn/$iconCode@2x.png";
   }
 

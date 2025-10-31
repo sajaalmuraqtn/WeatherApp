@@ -76,15 +76,42 @@ class _WeatherCardState extends State<WeatherCard> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => Scaffold(
+                        backgroundColor: Colors.white, // خلفية بيضاء
+                        appBar: AppBar(
+                          backgroundColor: Colors.white,
+                          elevation: 0,
+                          // زر رجوع في الـ AppBar (اختياري، يمكنك تركه أو إزالته والاعتماد على الزر السفلي)
+                          leading: IconButton(
+                            icon: const Icon(
+                              Icons.close,
+                              color: Color(0xFF065FAC),
+                            ), // أيقونة إغلاق
+                            onPressed: () => Navigator.pop(context),
+                          ),
+                          title: const Text(
+                            'Select Location',
+                            style: TextStyle(
+                              color: Color(0xFF065FAC),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                          centerTitle: true,
+                        ),
                         body: Center(
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              SizedBox(height: 100),
-                              CountryPicker(),
-                              TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: Text('back'),
+                              const SizedBox(height: 20),
+
+                              // ويدجت CountryPicker
+                              Expanded(
+                                // ويدجت CountryPicker تم وضعه داخل Expanded لملء المساحة
+                                child: CountryPicker(),
                               ),
+
+                              const SizedBox(height: 20),
+
                             ],
                           ),
                         ),
@@ -95,13 +122,13 @@ class _WeatherCardState extends State<WeatherCard> {
                       final city = value['city'];
                       final state = value['state'];
                       final country = value['country'];
-                       ////////// جلب الطقس للمدينة المختارة //////////
+                      ////////// جلب الطقس للمدينة المختارة //////////
                       final url =
                           "https://api.openweathermap.org/data/2.5/weather?q=$city,$country";
                       await widget.weather_data.getWeather(url);
-                    setState(() {
-                      updateUi();
-                    });  
+                      setState(() {
+                        updateUi();
+                      });
                     }
                   });
                 },
@@ -110,14 +137,14 @@ class _WeatherCardState extends State<WeatherCard> {
                   shape: const CircleBorder(),
                   side: const BorderSide(color: Color(0xCCFFFFFF)),
                 ),
-                child: const Icon(Icons.more_horiz_sharp, color: Colors.white),
+                child: const Icon(Icons.location_city, color: Colors.white),
               ),
               Row(
                 children: [
                   Icon(Icons.location_pin, color: Colors.white, size: 20),
                   SizedBox(width: 4),
                   Text(
-                    '$city',
+                    city,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
@@ -145,7 +172,7 @@ class _WeatherCardState extends State<WeatherCard> {
           ),
           Text('$country ,$city', style: TextStyle(color: Colors.white)),
           Text(
-            '${DateFormat('EEEE , d MMMM').format(DateTime.now())}',
+            DateFormat('EEEE , d MMMM').format(DateTime.now()),
             style: TextStyle(color: Colors.white54, fontSize: 10),
           ),
           const Divider(color: Colors.white12),

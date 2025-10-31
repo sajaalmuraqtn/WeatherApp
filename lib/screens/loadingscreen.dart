@@ -11,7 +11,7 @@ import 'package:weather_app/utils/constants.dart';
 import 'package:weather_app/utils/networking.dart';
 
 class Loadingscreen extends StatefulWidget {
-  Loadingscreen({super.key});
+  const Loadingscreen({super.key});
   @override
   State<Loadingscreen> createState() => _LoadingscreenState();
 }
@@ -27,7 +27,7 @@ class _LoadingscreenState extends State<Loadingscreen> {
       // هون رح اجيب الطقس حسب الاحداثيات بشكل تلقائي عند فتح التطبيق
     await weather.getWeather(  "https://api.openweathermap.org/data/2.5/weather?lat=${userLocation.latitude}&lon=${userLocation.longitude}");
      if (mounted) {
-      Navigator.pushReplacement(
+       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => LocationScreen(weather_data: weather),
@@ -35,8 +35,7 @@ class _LoadingscreenState extends State<Loadingscreen> {
       );
     }
   } catch (e) {
-    print(e);
-  }
+   }
 }
 
   @override

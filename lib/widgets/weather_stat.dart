@@ -5,7 +5,7 @@ class WeatherStat extends StatelessWidget {
   final String value;
   final String label;
 
-  const WeatherStat({
+  const WeatherStat({super.key, 
     required this.icon,
     required this.value,
     required this.label,

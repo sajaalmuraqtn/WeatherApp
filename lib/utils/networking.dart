@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import 'constants.dart';
 
 class NetworkHelper {
   final String url; // رح اجيب الرابط اما عن طريق الاحداثيات او عن طريق المدينة
