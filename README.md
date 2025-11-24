@@ -35,6 +35,8 @@ It integrates the **OpenWeatherMap API** to fetch live temperature, humidity, wi
 4. The user can open a location picker to change their city and view updated weather instantly.  
 
 ---
+🔗 **Live Demo:** https://drive.google.com/drive/folders/1QJoWY2UrZu-PnZd2ZA1dr81v2uOO5CPO?usp=drive_link
+
 ## 📷 Screens
 ![WeatherAppScreen](assets/screens.png)
 
